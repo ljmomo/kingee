@@ -28,7 +28,7 @@ public class UUserController
   @ResponseBody
   public UUser getUserById()
   {
-    UUser selectByPrimaryKey = (UUser)this.uUserServiceImpl.selectByPrimaryKey(Long.valueOf(Long.parseLong("1")));
+    UUser selectByPrimaryKey = this.uUserServiceImpl.selectByPrimaryKey(Long.valueOf(Long.parseLong("1")));
     return selectByPrimaryKey;
   }
   
@@ -72,7 +72,7 @@ public class UUserController
   @RequestMapping({"/userInfo"})
   public ModelAndView userInfo(HttpServletRequest req, HttpServletResponse res)
   {
-    UUser selectByPrimaryKey = (UUser)this.uUserServiceImpl.selectByPrimaryKey(Long.valueOf(1L));
+    UUser selectByPrimaryKey = this.uUserServiceImpl.selectByPrimaryKey(Long.valueOf(1L));
     
     ModelAndView mv = new ModelAndView("user/userInfo");
     mv.addObject("user", selectByPrimaryKey);
@@ -80,7 +80,7 @@ public class UUserController
   }
   
   @RequestMapping({"/userList"})
-  public ModelAndView userList(HttpServletRequest req, HttpServletResponse res, Page page)
+  public ModelAndView userList(HttpServletRequest req, HttpServletResponse res, Page<UUser> page)
   {
     List<UUser> list = this.uUserServiceImpl.find(null, page);
     ModelAndView mv = new ModelAndView("user/userList");
