@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.junly.dao.sys.DabaseTableMapper">
+  <resultMap id="BaseResultMap" type="com.junly.model.sys.DabaseTable">
+    <result column="TABLE_NAME" jdbcType="VARCHAR" property="tableName" />
+    <result column="TABLE_COMMENT" jdbcType="VARCHAR" property="tableComment" />
+    <result column="CREATE_TIME" jdbcType="VARCHAR" property="createTime" />
+  </resultMap>
+  
+  <select id="find" resultMap="BaseResultMap"  >
+		  SELECT
+			TABLE_NAME,
+			CREATE_TIME,
+			TABLE_COMMENT
+		FROM
+			information_schema.`TABLES`
+		WHERE
+			TABLE_SCHEMA = 'junly'
+  </select>
+  
+</mapper>

@@ -1,6 +1,8 @@
 package com.junly.service.base;
 
 import com.junly.common.plugins.page.Page;
+import com.junly.model.sys.UUser;
+
 import java.util.List;
 
 public abstract interface BaseService<K, V>
@@ -19,5 +21,5 @@ public abstract interface BaseService<K, V>
   
   public  int updateByPrimaryKey(V paramV);
   
-  public  List<V> find(V paramV, Page<V> paramPage);
+  public  List<V> find(V paramV, Page<V> page);
 }

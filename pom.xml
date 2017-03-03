@@ -331,9 +331,12 @@
 			<artifactId>shiro-spring</artifactId>
 			<version>1.2.5</version>
 		</dependency>
-		
-		
-		
+
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>1.7</version>
+		</dependency>		
 		
 	</dependencies>
   <build>
