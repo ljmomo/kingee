@@ -19,8 +19,8 @@
 	<div class="larry-personal">
 	    <div class="layui-tab" id ="LAY_demo" >
             <blockquote class="layui-elem-quote mylog-info-tit">
-                <button data-method="setTop" class="layui-btn">添加</button>
-                <button data-method="confirmTrans" class="layui-btn">修改</button>
+               <button data-method="offset" data-type="auto" class="layui-btn" >添加</button>
+               <button data-method="offset" data-type="auto" class="layui-btn" >修改</button>
             </blockquote>
             <div class="larry-separate"></div>
 		    <div class="layui-tab-content larry-personal-body clearfix mylog-info-box">
@@ -103,6 +103,7 @@
 		    </div>
 		</div>
 	</div>
+	<input id="handle_status" value="" hidden="hidden">
 </section>
 <script type="text/javascript" src="${basePath}/js/common/layer/layui.js"></script> 
 <script type="text/javascript" src="${basePath}/js/common/bootstrap/js/bootstrap.js"></script> 
@@ -112,14 +113,14 @@
 	      window.layer = layui.layer;
           var element = layui.element(),
           laypage = layui.laypage;
-          var page = ${page.pageNum};
+          var pageNum = ${page.pageNum};
           laypage({
 					cont: 'page',
 					pages: ${page.totalPage} //总页数
 						,
 					groups: 5 //连续显示分页数
 						,
-                    curr: page,	
+                    curr: pageNum,	
                     hash: true,
 					jump: function(obj, first) {
 						//得到了当前页，用于向服务端请求对应数据
@@ -198,15 +199,34 @@
       ,text = othis.text();
       
       layer.open({
-        type: 1
+        type: 2
         ,offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
         ,id: 'LAY_demo'+type //防止重复弹出
-        ,content: '<div style="padding: 20px 100px;">'+ text +'</div>'
-        ,btn: '关闭全部'
+        ,area: ['680px', '480px']
+        ,content: '${basePath}/user/addUser'
+        //,btn: '关闭全部'
         ,btnAlign: 'c' //按钮居中
         ,shade: 0 //不显示遮罩
         ,yes: function(){
           layer.closeAll();
+        },
+         end:function(){
+            var handle_status = $("#handle_status").val();
+            if ( handle_status == '1' ) {
+                layer.msg('添加成功！',{
+                    icon: 1,
+                    time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                },function(){
+                    history.go(0);
+                });
+            } else if ( handle_status == '2' ) {
+                layer.msg('添加失败！',{
+                    icon: 2,
+                    time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                },function(){
+                    history.go(0);
+                });
+            }
         }
       });
     }

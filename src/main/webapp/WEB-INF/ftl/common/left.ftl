@@ -51,7 +51,7 @@
 					</a>
 					    <dl class="layui-nav-child">
 					    	<dd>
-					    		<a href="javascript:;" data-url="userlist.html">
+					    		<a href="javascript:;"  data-url="${basePath}/user/userList" >
 					    		   <i class="iconfont icon-yonghu1" data-icon='icon-yonghu1'></i>
 					    		   <span>用户列表</span>
 					    		</a>

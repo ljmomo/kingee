@@ -35,7 +35,7 @@ public class LoginInterceptor
     if (username != null) {
       return true;
     }
-    request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
+    request.getRequestDispatcher("/user/index").forward(request, response);
     
     return false;
   }

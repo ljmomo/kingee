@@ -5,7 +5,7 @@ import java.util.List;
 public class Page<T>
 {
   private int pageNum = 1;
-  private int pageSize = 10;
+  private int pageSize = 2;
   private int totalRecord;
   private int totalPage;
   private List<T> results;
