@@ -55,7 +55,7 @@ public class DabaseTablesService implements BaseService<String, DabaseTable> {
 
 	@Override
 	public List<DabaseTable> find(DabaseTable paramV, Page<DabaseTable> page) {
-		return null;
+		return dabaseTableMapper.find(paramV, page);
 	}
 	
 	

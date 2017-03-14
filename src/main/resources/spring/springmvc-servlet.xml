@@ -19,9 +19,15 @@
 	<mvc:resources location="/js/" mapping="/js/**" />
 	<mvc:resources location="/ui/" mapping="/ui/**" />
 	<mvc:resources location="/images/" mapping="/images/**" />
+<mvc:resources location="classpath:/META-INF/resources/" mapping="swagger-ui.html"/>  
+<mvc:resources location="classpath:/META-INF/resources/webjars/" mapping="/webjars/**"/>  
 
 	<context:component-scan base-package="com.junly.controller" />
 	<!-- <context:component-scan base-package="com.it.junly.service" /> -->
+
+    <bean class="springfox.documentation.swagger2.configuration.Swagger2DocumentationConfiguration" id="swagger2Config"/>  
+    
+
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

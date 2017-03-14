@@ -18,6 +18,8 @@ import com.junly.common.plugins.page.Page;
 import com.junly.model.sys.UUser;
 import com.junly.service.sys.UserService;
 
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 @Controller
 @RequestMapping({"/user"})
 public class UUserController
@@ -25,9 +27,12 @@ public class UUserController
   @Autowired
   private UserService userService;
   
-  @RequestMapping(value="/getUserById")
+  
+  @ApiOperation(value="获取用户", notes="根据用户ID获取用户")
+  @ApiImplicitParam(name = "id", value = "用户Id", required = true, dataType = "long")
+  @RequestMapping(value="/getUserById",method=RequestMethod.POST)
   @ResponseBody
-  public UUser getUserById()
+  public UUser getUserById(Long id)
   {
     UUser selectByPrimaryKey = this.userService.selectByPrimaryKey(Long.valueOf(Long.parseLong("1")));
     return selectByPrimaryKey;
