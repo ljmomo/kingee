@@ -1,9 +1,6 @@
 package com.junly.model.sys;
 
 import java.io.Serializable;
-import java.util.Date;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 public class DabaseTable implements Serializable  {
 

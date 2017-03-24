@@ -1,14 +1,15 @@
 package com.junly.service.sys;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.junly.common.plugins.page.Page;
 import com.junly.common.util.FreemarkGeneratorCodeUtil;
+import com.junly.common.util.Pager;
 import com.junly.dao.sys.DabaseTableMapper;
 import com.junly.model.sys.DabaseTable;
 import com.junly.service.base.BaseService;
@@ -21,7 +22,7 @@ public class DabaseTablesService implements BaseService<String, DabaseTable> {
     DabaseTableMapper  dabaseTableMapper;
 	@Override
 	public List<DabaseTable> selectList(DabaseTable dabaseTable) {
-		return null;
+		return dabaseTableMapper.list(dabaseTable);
 	}
 	@Override
 	public int deleteByPrimaryKey(String paramK) {
@@ -29,13 +30,13 @@ public class DabaseTablesService implements BaseService<String, DabaseTable> {
 	}
 
 	@Override
-	public DabaseTable insert(DabaseTable paramV) {
-		return null;
+	public int insert(DabaseTable paramV) {
+		return 0;
 	}
 
 	@Override
-	public DabaseTable insertSelective(DabaseTable paramV) {
-		return null;
+	public int insertSelective(DabaseTable paramV) {
+		return 0;
 	}
 
 	@Override
@@ -54,8 +55,11 @@ public class DabaseTablesService implements BaseService<String, DabaseTable> {
 	}
 
 	@Override
-	public List<DabaseTable> find(DabaseTable paramV, Page<DabaseTable> page) {
-		return dabaseTableMapper.find(paramV, page);
+	public List<DabaseTable> listPager(DabaseTable paramV, Pager page) {
+		Map<String,Object> param = new HashMap<String,Object>();
+		param.put("record", paramV);
+		param.put("page",page);
+		return dabaseTableMapper.listPager(param);
 	}
 	
 	

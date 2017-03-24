@@ -79,28 +79,16 @@
 		
 		<property name="typeAliasesPackage" value="com.junly.model" /> 
 		<!-- <property name="configLocation" value="classpath:mybatis/mybatis-config.xml" /> -->
-		<property name="mapperLocations" value="classpath:mybatis/mappers/*Mapper.xml" />
-	    <!-- 其中一种分页 导入传入参数既可以用 -->
-	   <!--  	<property name="plugins">
-			<array>
-				  <bean class="com.github.pagehelper.PageHelper">
-					<property name="properties">
-						<value>
-							dialect=mysql
-						</value>
-					</property>
-				</bean>
-			</array>
-		</property>-->
-		<!-- 自己定义的插件 -->
-    <property name="plugins"><array><ref bean="pagePlugin" /></array></property>
+		<property name="mapperLocations" value="classpath:mybatis/mappers/*/*Mapper.xml" />
+        <property name="plugins"><array><ref bean="pagePlugin" /></array></property>
 	</bean>
 	
 	 <!-- 分页配置-->
-    <bean id="pagePlugin" class="com.junly.common.plugins.page.PageInterceptor">
+    <bean id="pagePlugin" class="com.junly.common.plugins.page.PaginationInterceptor">
 		<property name="properties">
 			<props>
-				<prop key="databaseType">mysql</prop>
+				<prop key="dialect">mysql</prop>
+				<prop key="pageSqlId">.*listPage.*</prop>
 			</props>
 		</property>
 	</bean>
