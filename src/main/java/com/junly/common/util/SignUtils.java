@@ -11,7 +11,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 /**
- * 天搜内部签名 签名（约定key的算法）
+ * lijun内部签名 签名（约定key的算法）
  * 
  * @author 卡内齐 (kaneiqi@dajiaok.com)
  * @version $Id: SignUtils.java, v 0.1 2014-6-4 下午01:05:55 kaneiqi Exp $

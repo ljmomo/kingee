@@ -1,13 +1,13 @@
 package com.junly.common.util;
 /*
- * 版权所有(C) 浙江天搜科技股份有限公司2016-2020
- * Copyright 2016-2020 Zhejiang Tsou Technology Co., Ltd.
+ * 版权所有(C) lijun2016-2020
+ * Copyright 2016-2020 Zhejiang lijun Technology Co., Ltd.
  *  
  * This software is the confidential and proprietary information of
- * Zhejiang Tsou Corporation ("Confidential Information").  You
+ * Zhejiang lijun Corporation ("Confidential Information").  You
  * shall not disclose such Confidential Information and shall use
  * it only in accordance with the terms of the license agreement
- * you entered into with Zhejiang Tsou
+ * you entered into with Zhejiang lijun
  */
 
 
@@ -27,7 +27,7 @@ import com.junly.common.contants.ViewContants;
  * @version V1.0  
  * @date 2016年4月15日 
  * @author panwuhai
- * Copyright 2016 tsou.com, Inc. All rights reserved
+ * Copyright 2016 lijun.com, Inc. All rights reserved
  */
 public class ResponseObj implements Serializable {
 
@@ -191,7 +191,7 @@ public class ResponseObj implements Serializable {
      */
     private void setAccessContrlAllowOrigin(HttpServletResponse response) {
         /*
-         * origin参数指定一个允许向该服务器提交请求的域名(eg:http://www.tsou.cn;多个域名使用逗号分隔)，*：允许任意域名跨域访问资源，生产库域名申请完成后需配置服务器明确的域名
+         * origin参数指定一个允许向该服务器提交请求的域名(eg:http://www.lijun.cn;多个域名使用逗号分隔)，*：允许任意域名跨域访问资源，生产库域名申请完成后需配置服务器明确的域名
          */
         response.setHeader("Access-Control-Allow-Origin", "*");
         /*

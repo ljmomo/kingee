@@ -22,7 +22,7 @@ import java.util.Map;
  */
 public class JdbcUtils {  
     //数据库用户名  
-    private static final String USERNAME = "tsou";  
+    private static final String USERNAME = "lijun";  
     //数据库密码  
     private static final String PASSWORD = "123456";  
     //驱动信息   

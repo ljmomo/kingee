@@ -10,7 +10,7 @@ import java.io.Serializable;
  * @version V1.0  
  * @date 2016年4月26日 
  * @author panwuhai
- * Copyright 2016 tsou.com, Inc. All rights reserved
+ * Copyright 2016 lijun.com, Inc. All rights reserved
  */
 public class Pager implements Serializable {
 

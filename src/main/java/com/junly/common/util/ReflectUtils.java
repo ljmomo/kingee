@@ -1,12 +1,12 @@
 /*
- * 版权所有(C) 浙江天搜科技股份有限公司2016-2020
- * Copyright 2016-2020 Zhejiang Tsou Technology Co., Ltd.
+ * 版权所有(C) lijun2016-2020
+ * Copyright 2016-2020 Zhejiang lijun Technology Co., Ltd.
  *  
  * This software is the confidential and proprietary information of
- * Zhejiang Tsou Corporation ("Confidential Information").  You
+ * Zhejiang lijun Corporation ("Confidential Information").  You
  * shall not disclose such Confidential Information and shall use
  * it only in accordance with the terms of the license agreement
- * you entered into with Zhejiang Tsou
+ * you entered into with Zhejiang lijun
  */
 package com.junly.common.util;
 
@@ -24,7 +24,7 @@ import org.apache.commons.logging.LogFactory;
  * @version V1.0  
  * @date 2016年6月12日 
  * @author panwuhai
- * Copyright 2016 tsou.com, Inc. All rights reserved
+ * Copyright 2016 lijun.com, Inc. All rights reserved
  */
 public class ReflectUtils {
 

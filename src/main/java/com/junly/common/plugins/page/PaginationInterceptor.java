@@ -41,7 +41,7 @@ import com.junly.common.util.StringUtil;
  * @version V1.0  
  * @date 2016年11月12日 
  * @author wan.Dong
- * Copyright 2016 tsou.com, Inc. All rights reserved
+ * Copyright 2016 lijun.com, Inc. All rights reserved
  */
 @Intercepts({@Signature(type=StatementHandler.class,method="prepare",args={Connection.class})})
 public class PaginationInterceptor implements Interceptor{
